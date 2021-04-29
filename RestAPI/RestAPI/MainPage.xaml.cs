@@ -28,7 +28,7 @@ namespace RestAPI
             request.Headers.Add("Accpet", "application/json");
             client = new HttpClient();
             HttpResponseMessage response = await client.SendAsync(request);
-            if(response.StatusCode== HttpStatusCode.OK)
+            if(response.StatusCode == HttpStatusCode.OK)
             {
                 string content = await response.Content.ReadAsStringAsync();
                 var resultado = JsonConvert.DeserializeObject<List<employees>>(content);
