@@ -4,7 +4,10 @@
              x:Class="RestAPI.MainPage">
 
     <StackLayout>
-        <Button Text="Mostrar Lista" Clicked="Button_Clicked"/>
+        <Button Text="Mostrar Lista" Clicked="ObtenerListado"/>
+        <Button Text="Ingresar" Clicked="BuscarID"/>
+        <Button Text="Actualizar" Clicked="Actualizar"/>
+        <Button Text="Borrar" Clicked="Borrar"/>
         <ListView x:Name="MiLista">
             <ListView.ItemTemplate>
                 <DataTemplate>

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace RestAPI.Modelos
+namespace RestAPI.Models
 {
     public class employees
     {
@@ -10,4 +10,5 @@ namespace RestAPI.Modelos
         public string name { get; set; }
         public int salary { get; set; }
     }
+
 }

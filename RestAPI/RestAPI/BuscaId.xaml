@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RestAPI.BuscaId">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry Placeholder="Ingrese el nombre empleado" Keyboard="Chat" x:Name="nombre"/>
+            <Entry Placeholder="Ingrese el salario empleado" Keyboard="Numeric" x:Name="salario"/>
+            <Button Text="Ingresar" Clicked="Agregar"/>
+ 
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

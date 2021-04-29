@@ -8,24 +8,25 @@ using Xamarin.Forms;
 using System.Net;
 using System.Net.Http;
 using Newtonsoft.Json;
-using RestAPI.Modelos;
+using RestAPI.Models;
 
 namespace RestAPI
 {
     public partial class MainPage : ContentPage
     {
+        HttpClient client;
         public MainPage()
         {
             InitializeComponent();
         }
 
-        private async void Button_Clicked(object sender, EventArgs e)
+        private async void ObtenerListado(object sender, EventArgs e)
         {
             var request = new HttpRequestMessage();
             request.RequestUri = new Uri("http://ec2-18-231-108-168.sa-east-1.compute.amazonaws.com/");
             request.Method = HttpMethod.Get;
             request.Headers.Add("Accpet", "application/json");
-            var client = new HttpClient();
+            client = new HttpClient();
             HttpResponseMessage response = await client.SendAsync(request);
             if(response.StatusCode== HttpStatusCode.OK)
             {
@@ -34,6 +35,21 @@ namespace RestAPI
 
                 MiLista.ItemsSource = resultado;
             }
+        }
+
+        private async void BuscarID(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new BuscaId());
+        }
+
+        private async void Actualizar(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new borrar());
+        }
+
+        private async void Borrar(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Delete());
         }
     }
 }
